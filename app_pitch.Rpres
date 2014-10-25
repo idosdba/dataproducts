@@ -1,0 +1,38 @@
+Baseball Predictions
+========================================================
+author: idosdba
+date: Oct 24, 2014
+
+Overview
+========================================================
+- Baseball is arguably the favorite pastime in United States of America. 
+- Major League Baseball is the league consisting of 30 professional teams. 
+- The baseball community collects and analyzes different statistics on lots of aspects of baseball. 
+- This application uses just six such batting and pitching statistics of the teams to predict the winning percentage of two teams going against each other. 
+
+The Application
+========================================================
+- The last 5 years of data for all the 30 teams is gathered from the Major League Baseball(MLB) website.
+- A prediction model is developed based on this 5 years of data.
+- The user provides the batting and pitching statistics for a team.
+- Typically you could use the statistics for the entire regular season or statistics for a certain number of games.
+- The provided statistics are fitted into the prediction model to calculate the win percentages of the teams.
+
+How it works
+========================================================
+- The application can be accessed at http://idosdba.shinyapps.io/baseballApp/
+- At startup, the application loads up the 2014 statistics for two teams (Arizona Diamondbacks and Atlanta Braves).
+- By default, the application shows the prediction for these two teams. 
+- The user enters data and clicks on "Predict" button which calculates the output.
+- When "Prediction" tab is clicked, the latest calculated prediction is displayed.
+
+Table - 2014 Statistics for 5 MLB teams
+========================================================
+```{r echo=FALSE, results='asis'}
+library(knitr)
+
+bballDF = read.csv ("baseball_2014.csv")
+kable(head(bballDF), format = "markdown")
+
+```
+
